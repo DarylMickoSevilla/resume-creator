@@ -33,7 +33,12 @@ namespace Resume_Creator
         }
         private void Savebtn_Click(object sender, EventArgs e)
         {
-
+            Document doc = new Document();
+            PdfWriter.GetInstance(doc, new FileStream(@"C:/Resume/Sevilla_Daryl Micko1.pdf", FileMode.Create));
+            doc.Open();
+            Paragraph p1 = new Paragraph(InfoBox.Text);
+            doc.Add(p1);
+            doc.Close();
         }
 
         private void OpenFilebtn_Click(object sender, EventArgs e)
